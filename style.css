@@ -1,0 +1,67 @@
+/* Custom styles to match the theme */
+:root {
+    --dark-bg-primary: #0d0d0d; /* Deepest black */
+    --accent-color: #ff5252; /* Reddish accent color */
+    --green-color: #4CAF50; /* Green for checkmarks */
+    --transparent-border-color: rgba(255, 255, 255, 0.05); /* Very subtle transparent white border */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-bg-primary); /* Main body background */
+    color: #e0e0e0; /* Light gray text for contrast */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ensure header and all sections/cards/footer have the primary dark background */
+.header-bg,
+.section-bg,
+.card-bg,
+footer {
+    background-color: var(--dark-bg-primary) !important; /* Force the deepest black */
+}
+
+/* Transparent borders for sections, applied as a separate class */
+.section-border {
+    border: 1px solid var(--transparent-border-color); /* Subtle transparent border */
+    border-radius: 0.5rem; /* Apply some rounding */
+    margin: 1.5rem auto; /* Add margin between sections for visibility of borders */
+    max-width: 1200px; /* Limit width slightly for border visibility if not full-edge */
+    width: calc(100% - 3rem); /* Adjust width to account for margin */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.accent-text {
+    color: var(--accent-color); /* Accent color for "J." and other highlights */
+}
+/* Removed the .green-dot specific styling as the div is removed from HTML */
+
+.social-icon {
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+}
+.social-icon:hover {
+    color: var(--accent-color); /* Accent color on hover */
+}
+
+/* Keyframes for the fade-in-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation to the hero heading */
+.animate-fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.5s; /* Delay the animation slightly after page load */
+    opacity: 0; /* Start invisible */
+}

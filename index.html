@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+    <!-- Header/Navigation Bar -->
+    <header class="header-bg py-4 fixed w-full z-10 top-0 shadow-lg">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#hero" class="text-3xl font-extrabold accent-text p-2">J.</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#hero" class="text-white hover:text-accent-text font-medium transition-colors p-2 rounded-lg">Home</a>
+                <a href="#profile" class="text-gray-400 hover:text-white font-medium transition-colors p-2 rounded-lg">About</a>
+                <a href="#skills" class="text-gray-400 hover:text-white font-medium transition-colors p-2 rounded-lg">My Skills</a>
+                <a href="#portfolio" class="text-gray-400 hover:text-white font-medium transition-colors p-2 rounded-lg">Projects</a>
+                <a href="#my-cv" class="text-gray-400 hover:text-white font-medium transition-colors p-2 rounded-lg">My CV</a>
+                <a href="#contact-full" class="text-gray-400 hover:text-white font-medium transition-colors p-2 rounded-lg">Contact</a>
+                </button>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden header-bg mt-2 px-4 pb-2 shadow-md mx-4 rounded-b-lg">
+            <a href="#hero" class="block py-2 text-white hover:text-accent-text font-medium transition-colors border-b border-gray-700">Home</a>
+            <a href="#profile" class="block py-2 text-gray-400 hover:text-white font-medium transition-colors border-b border-gray-700">About</a>
+            <a href="#skills" class="block py-2 text-gray-400 hover:text-white font-medium transition-colors border-b border-gray-700">My Skills</a>
+            <a href="#portfolio" class="block py-2 text-gray-400 hover:text-white font-medium transition-colors border-b border-gray-700">Projects</a>
+            <a href="#my-cv" class="block py-2 text-gray-400 hover:text-white font-medium transition-colors border-b border-gray-700">My CV</a>
+            <a href="#contact-full" class="block py-2 text-gray-400 hover:text-white font-medium transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-20 section-bg min-h-screen">
+        <!-- Hero Section - streamlined content -->
+        <section id="hero" class="section-bg text-white py-16 md:py-24 flex flex-col md:flex-row items-center md:items-center justify-center relative overflow-hidden min-h-[calc(100vh-80px)]">
+            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Left Column: Social Icons, Name, Profession -->
+                <div class="flex flex-col md:flex-row md:justify-start items-center md:items-start relative w-full">
+                    <!-- Social Icons (Left Side) -->
+                    <div class="md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:mr-8 flex md:flex-col space-x-4 md:space-x-0 md:space-y-4 mb-8 md:mb-0">
+                        <a href="https://www.linkedin.com/in/jishnushyam" target="_blank" class="social-icon text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:jishnushyam25@gmail.com" class="social-icon text-2xl" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/Jishnuu25" target="_blank" class="social-icon text-2xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                    <!-- Name and Profession -->
+                    <div class="text-center md:text-left md:ml-20">
+                        <!-- Added animate-fadeInUp class for the visual effect -->
+                        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 animate-fadeInUp">Hello, I'm Jishnu Shyam</h1>
+                        <p class="text-xl md:text-2xl text-gray-300 font-semibold mb-2"> Bachelors in Information Technology </p>
+                        <p class="text-lg md:text-xl text-gray-400 mb-6">Based in Hyderabad, India<br>Eager to innovate and solve real-world problems with a passion for Data Science, Machine Learning and Servicenow.</p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Profile Image -->
+                <div class="relative flex justify-center items-center">
+                <img src="LTQI3617.png" onerror="this.onerror=null;this.src='https://placehold.co/500x600/3d3d3d/ffffff?text=Placeholder';" alt="Jishnu Shyam Profile" class="w-80 h-auto md:w-[500px] lg:w-[600px] object-contain relative z-0">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="profile" class="py-16 md:py-24 section-bg section-border text-white w-full">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3">
+                        <img src="aboutimage.jpg" alt="About Me Image" class="rounded-lg shadow-lg w-full h-auto">
+                    </div>
+                    <div class="md:w-2/3 text-lg text-gray-300 leading-relaxed">
+                        <p class="mb-4">
+                            I am Jishnu Shyam, an aspiring IT professional currently pursuing a Bachelor of Technology in Information Technology. I am driven by a passion for technology and its application in solving complex challenges. I hold ServiceNow Certified System Administrator (CSA) and Certified Application Developer (CAD) certifications, validating my expertise in managing and developing on the ServiceNow platform.
+                        </p>
+                        <p class="mb-4">
+                            My foundational knowledge spans programming (Java, Python, SQL), data analysis, and machine learning, complemented by practical experience in areas like data preprocessing and model optimization. I also possess strong soft skills, including communication, leadership, and problem-solving, which I actively apply as an Outreach Coordinator for the IEEE SSIT SB Chapter. I am eager to contribute my technical skills and collaborative spirit to real-world projects in a dynamic tech environment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 section-bg section-border text-white w-full">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-100 mb-10">My Skills</h2>
+                <div class="card-bg p-8 rounded-lg shadow-md max-w-2xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+                        <!-- Skill Item 1 -->
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check text-green-500 text-xl"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-100 uppercase">Python</h3>
+                                <p class="text-sm text-gray-400">Intermediate</p>
+                            </div>
+                        </div>
+                        <!-- Skill Item 2 -->
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check text-green-500 text-xl"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-100 uppercase">Java</h3>
+                                <p class="text-sm text-gray-400">Intermediate</p>
+                            </div>
+                        </div>
+                        <!-- Skill Item 3 -->
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check text-green-500 text-xl"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-100 uppercase">Machine Learning</h3>
+                                <p class="text-sm text-gray-400">Intermediate</p>
+                            </div>
+                        </div>
+                        <!-- Skill Item 4 -->
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check text-green-500 text-xl"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-100 uppercase">Object Oriented Programming</h3>
+                                <p class="text-sm text-gray-400">Intermediate</p>
+                            </div>
+                        </div>
+                        <!-- Skill Item 5 -->
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check text-green-500 text-xl"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-100 uppercase">SQL</h3>
+                                <p class="text-sm text-gray-400">Intermediate</p>
+                            </div>
+                        </div>
+                        <!-- Skill Item 6 -->
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check text-green-500 text-xl"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-100 uppercase">ServiceNow CSa</h3>
+                                <p class="text-sm text-gray-400">Intermediate</p>
+                            </div>
+                        </div>
+                        <!-- Skill Item 7 -->
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check text-green-500 text-xl"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-100 uppercase">ServiceNow CAD</h3>
+                                <p class="text-sm text-gray-400">Intermediate</p>
+                            </div>
+                        </div>
+                        <!-- Skill Item 8 -->
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check text-green-500 text-xl"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-100 uppercase">HTML</h3>
+                                <p class="text-sm text-gray-400">Intermediate</p>
+                            </div>
+                        </div>
+                        <!-- Skill Item 9 -->
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check text-green-500 text-xl"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-100 uppercase">CSS</h3>
+                                <p class="text-sm text-gray-400">Intermediate</p>
+                            </div>
+                        </div>
+                        <!-- Skill Item 10 -->
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check text-green-500 text-xl"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-100 uppercase">JavaScript</h3>
+                                <p class="text-sm text-gray-400">Basic</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio/Projects Section -->
+        <section id="portfolio" class="py-16 md:py-24 section-bg section-border text-white w-full">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="card-bg rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="project1 image.jpeg" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-accent-text mb-2">Twitter Sentiment Analysis</h3>
+                            <p class="text-gray-300 mb-4">In this project, we develop a Natural Language Processing (NLP) model to perform sentiment analysis on Twitter data, addressing the unique challenges of classifying tweet sentiments. </p>
+                            <a href="https://github.com/Jishnuu25/-Sentiment-Analysis" class="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center">
+                                View Project
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.25 10.5L21 6.75m0 0L17.25 3m3.75 3.75H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="card-bg rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="project2imAGE.jpg" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-accent-text mb-2">Portfolio Website</h3>
+                            <p class="text-gray-300 mb-4">My Personal portfolio website designed using Html Css and JavaScript.</p>
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center">
+                                View Project
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.25 10.5L21 6.75m0 0L17.25 3m3.75 3.75H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Add more project cards as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- My CV Section -->
+        <section id="my-cv" class="py-16 md:py-24 section-bg section-border text-white w-full">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">My Resume / CV</h2>
+                <div class="card-bg p-8 rounded-lg shadow-md max-w-2xl mx-auto">
+                    <p class="text-gray-300 text-lg mb-6">
+                        You can view or download my complete resume below.
+                    </p>
+                    <!-- Option 1: Link to PDF -->
+                    <a href="jishnushyam.pdf" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition transform hover:scale-105 inline-flex items-center">
+                        <i class="fas fa-file-pdf mr-3"></i> View / Download Resume (PDF)
+                    </a>
+
+                    <!-- Option 2: Embed PDF (uncomment if you prefer embedding directly) -->
+                    <!--
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold text-gray-200 mb-4">Embedded Resume</h3>
+                        <div class="relative" style="padding-top: 141.42%;">
+                            <iframe src="your_resume.pdf" class="absolute inset-0 w-full h-full border-0 rounded-lg shadow-lg" frameborder="0">
+                                This browser does not support PDFs. Please download the PDF to view it:
+                                <a href="your_resume.pdf" class="text-indigo-400 hover:text-indigo-300 font-medium">Download PDF</a>
+                            </iframe>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-4">
+                            Embedding might not work on all mobile devices. Consider providing a direct download link as a fallback.
+                            Adjust `padding-top` to match your PDF's aspect ratio for better display. (e.g., for A4 portrait, it's roughly 141.42%)
+                        </p>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Full Contact Section (Separate from landing page contact info) -->
+        <section id="contact-full" class="py-16 md:py-24 section-bg section-border text-white w-full">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Send Me A Message</h2>
+                <div class="card-bg p-8 rounded-lg shadow-md max-w-md mx-auto">
+                    <p class="text-center text-gray-300 mb-6">Have a question or want to work together? Use the form below!</p>
+                    <form action="https://formspree.io/f/mgvyrngn" method="POST" id="contact-form"></form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="shadow appearance-none border border-gray-700 rounded-lg w-full py-2 px-3 bg-gray-700 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="shadow appearance-none border border-gray-700 rounded-lg w-full py-2 px-3 bg-gray-700 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 text-sm font-bold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="shadow appearance-none border border-gray-700 rounded-lg w-full py-2 px-3 bg-gray-700 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your message..." required></textarea>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                                Send Message
+                            </button>
+                        </div>
+                        <p id="form-submission-message" class="text-center mt-4 text-green-500 hidden"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="section-bg text-white py-8 text-center shadow-inner">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 jishnushyam. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="https://www.linkedin.com/in/jishnushyam" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+                <a href="https://github.com/Jishnuu25" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
+                <a href="mailto:jishnushyam25@gmail.com" class="text-gray-400 hover:text-white transition-colors">Gmail</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
