@@ -1,0 +1,655 @@
+/* Custom styles to match the theme */
+:root {
+    /* Dark mode variables */
+    --dark-bg-primary: #121212; /* Slightly darker than pure black for better contrast */
+    --dark-bg-secondary: #1e1e1e; /* Slightly lighter slate-gray for cards */
+    --dark-text-primary: #f1f1f1; /* Slightly off-white text for eye comfort */
+    --dark-text-secondary: #b0b0b0; /* Light gray text */
+    --dark-border-color: rgba(255, 255, 255, 0.08); /* Subtle white border */
+    
+    /* Light mode variables */
+    --light-bg-primary: #fafafa; /* Off-white background for eye comfort */
+    --light-bg-secondary: #f0f0f0; /* Light gray background for cards */
+    --light-text-primary: #333333; /* Dark gray text */
+    --light-text-secondary: #666666; /* Medium gray text */
+    --light-border-color: rgba(0, 0, 0, 0.08); /* Subtle black border */
+    
+    /* Common variables */
+    --accent-color: #6366f1; /* Indigo accent color - more modern */
+    --accent-hover: #4f46e5; /* Darker indigo for hover states */
+    --green-color: #10b981; /* Emerald green for checkmarks */
+    
+    /* Default to dark mode */
+    --bg-primary: var(--dark-bg-primary);
+    --bg-secondary: var(--dark-bg-secondary);
+    --text-primary: var(--dark-text-primary);
+    --text-secondary: var(--dark-text-secondary);
+    --border-color: var(--dark-border-color);
+}
+
+/* Light mode class applied to body */
+body.light-mode {
+    --bg-primary: var(--light-bg-primary);
+    --bg-secondary: var(--light-bg-secondary);
+    --text-primary: var(--light-text-primary);
+    --text-secondary: var(--light-text-secondary);
+    --border-color: var(--light-border-color);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Apply theme colors to elements */
+.header-bg,
+.section-bg,
+.card-bg,
+footer {
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease;
+}
+
+/* Card style for sections */
+.card-bg {
+    background-color: var(--bg-secondary);
+}
+
+/* Transparent borders for sections */
+.section-border {
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    margin: 1.5rem auto;
+    max-width: 1200px;
+    width: calc(100% - 3rem);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Text colors */
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.accent-text {
+    color: var(--accent-color);
+}
+
+/* Social icons */
+.social-icon {
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--accent-color);
+}
+
+/* Hero section social media icons - Theme adaptive */
+.hero-social-icons i {
+    color: white !important;
+}
+
+body.light-mode .hero-social-icons i {
+    color: white !important;
+}
+
+/* Hero section skill tags - Theme adaptive */
+.hero-skills span {
+    color: white !important;
+}
+
+body.light-mode .hero-skills span {
+    color: #1f2937 !important; /* Dark gray text for light mode */
+}
+
+body.light-mode .hero-skills span:hover {
+    color: #3b82f6 !important; /* Blue color on hover in light mode */
+}
+
+/* Mobile Profile Picture Touch Effects */
+@media (max-width: 1024px) {
+    #profileContainer.touch-active {
+        transform: scale(1.05) !important;
+    }
+    
+    #profileContainer.touch-active > div.relative {
+        transform: scale(1.05) !important;
+        box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.25) !important;
+        border-color: rgba(99, 102, 241, 0.5) !important;
+    }
+    
+    #profileContainer.touch-active img {
+        transform: scale(1.1) !important;
+        filter: brightness(1.1) contrast(1.05) !important;
+    }
+    
+    /* Enhance the gradient rings on touch */
+    #profileContainer.touch-active .absolute.-inset-8 {
+        filter: blur(2rem) !important;
+    }
+    
+    #profileContainer.touch-active .absolute.-inset-6 {
+        filter: blur(1rem) !important;
+        opacity: 1 !important;
+    }
+    
+    #profileContainer.touch-active .absolute.-inset-3 {
+        opacity: 0.8 !important;
+    }
+    
+    #profileContainer.touch-active .absolute.-inset-1 {
+        opacity: 0.6 !important;
+    }
+    
+    /* Add smooth transitions for mobile touch */
+    #profileContainer,
+    #profileContainer > div.relative,
+    #profileContainer img {
+        transition: all 0.3s ease !important;
+    }
+}
+
+/* Enhanced styling for better visual appeal */
+.section-heading {
+    position: relative;
+    display: inline-block;
+}
+
+.section-heading:after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.skill-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--bg-secondary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card {
+    border-radius: 1rem;
+    background-color: var(--bg-secondary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Improved button styles */
+.btn {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Animation effects */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.animate-delay-100 {
+    animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+    animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+    animation-delay: 0.3s;
+}
+
+/* Spin animation for profile image border */
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+}
+
+/* Improved card styles */
+.card-bg {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-bg:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Theme toggle slider button */
+.theme-toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: #3a3a3a; /* Dark background by default */
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+}
+
+body.light-mode .theme-toggle {
+    background-color: #e4e4e4; /* Light background in light mode */
+}
+
+/* Icons */
+.theme-toggle i {
+    position: absolute;
+    font-size: 14px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2; /* Above the circle */
+}
+
+.theme-toggle .fa-moon {
+    left: 9px;
+    color: #e4e4e4; /* Light moon icon in dark mode */
+    opacity: 1;
+}
+
+.theme-toggle .fa-sun {
+    right: 9px;
+    color: #3a3a3a; /* Dark sun icon in light mode */
+    opacity: 0;
+}
+
+body.light-mode .theme-toggle .fa-moon {
+    opacity: 0;
+}
+
+body.light-mode .theme-toggle .fa-sun {
+    opacity: 1;
+}
+
+/* Circle indicator */
+.theme-toggle::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    background-color: #3a3a3a; /* Dark circle in dark mode (over moon icon) */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1;
+}
+
+body.light-mode .theme-toggle::before {
+    transform: translateX(30px); /* Move to right in light mode */
+    background-color: #e4e4e4; /* Light circle in light mode (over sun icon) */
+}
+
+/* Project cards */
+.project-card {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Form elements */
+input, textarea, select {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* Button styles */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb; /* Darker blue */
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Skill badge styling */
+.skill-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+.skill-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 0 0 1px var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+body.light-mode .skill-badge:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 0 0 1px var(--accent-color);
+}
+
+body:not(.light-mode) .skill-badge:hover {
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2), 0 0 0 1px var(--accent-color);
+}
+
+/* Keyframes for the fade-in-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation to elements */
+.animate-fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+/* Animation delay cascades */
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+
+/* Mobile menu styling */
+#mobile-menu {
+    transform-origin: top center;
+    animation: fadeIn 0.3s ease-out;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+#mobile-menu a {
+    position: relative;
+    z-index: 60;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* Remove default mobile tap highlight */
+    touch-action: manipulation; /* Improve touch event handling */
+}
+
+.mobile-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.mobile-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    opacity: 0;
+    transform: scale(0);
+    border-radius: 4px;
+    transition: transform 0.3s, opacity 0.3s;
+    z-index: -1;
+}
+
+.mobile-link:active::after {
+    opacity: 0.1;
+    transform: scale(1);
+}
+
+#mobile-menu-overlay {
+    animation: fadeIn 0.2s ease-out;
+}
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+
+/* Certificate View Buttons */
+.view-cert-btn {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.view-cert-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.view-cert-btn:hover::before {
+    left: 100%;
+}
+
+.view-cert-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.view-cert-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+}
+
+/* Mobile tilt effects */
+.tilt-active {
+    will-change: transform;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.12) !important;
+    z-index: 5;
+}
+
+.skill-badge,
+.project-card,
+.certification-card,
+.card-bg,
+.testimonial-card {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.tilt-inner {
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+}
+
+/* Different tilt effects based on section */
+#profile .card-bg.tilt-active {
+    box-shadow: 0 20px 30px rgba(0,0,0,0.2), 0 15px 15px rgba(0,0,0,0.15) !important;
+}
+
+#experience .card-bg.tilt-active {
+    box-shadow: 0 18px 25px rgba(0,0,0,0.18), 0 12px 12px rgba(0,0,0,0.14) !important;
+}
+
+#contact-full .card-bg.tilt-active {
+    box-shadow: 0 16px 24px rgba(0,0,0,0.16), 0 10px 10px rgba(0,0,0,0.12) !important;
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+    .mobile-full-width {
+        width: 100% !important;
+    }
+    
+    /* Improve touch targets on mobile */
+    a, button {
+        min-height: 44px; /* Apple's recommended minimum touch target size */
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    /* Tilt effect for mobile cards */
+    .skill-badge,
+    .project-card,
+    .certification-card,
+    .card-bg,
+    .testimonial-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        touch-action: manipulation;
+    }
+    
+    /* Remove scale down effect since we're using tilt instead */
+    .skill-badge:active,
+    .project-card:active,
+    .certification-card:active,
+    .card-bg:active,
+    .testimonial-card:active,
+    .btn:active,
+    .social-icon:active {
+        transform: none;
+    }
+    
+    /* Improve active feedback for touch */
+    .active-link {
+        color: var(--accent-color) !important;
+        background-color: rgba(99, 102, 241, 0.1);
+    }
+}
+
+/* Theme-adaptive button text styles */
+.view-cert-btn {
+    color: white !important;
+}
+
+.view-cert-btn i {
+    color: white !important;
+}
+
+/* In light mode, make certification buttons have dark text for better contrast */
+body.light-mode .view-cert-btn {
+    color: #333333 !important;
+}
+
+body.light-mode .view-cert-btn i {
+    color: #333333 !important;
+}
+
+/* Get in Touch button should always be white on gradient background */
+.hero-cta-btn,
+.hero-cta-btn span,
+.hero-cta-btn i {
+    color: white !important;
+}
+
+/* In light mode, make Get in Touch button text black for better contrast */
+body.light-mode .hero-cta-btn,
+body.light-mode .hero-cta-btn span,
+body.light-mode .hero-cta-btn i {
+    color: #333333 !important;
+}
